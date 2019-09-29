@@ -14,14 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewpager_main.adapter=ViewPagerAdapter(supportFragmentManager)
+        viewpager_main.adapter = ViewPagerAdapter(supportFragmentManager)
         tabs_main.setupWithViewPager(viewpager_main)
     }
 
     inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         private val pages = listOf(
             MakananFragment.getInstance(),
-            MinumanFragment.getInstance()
+            MinumanFragment.getInstance(),
+            AddFragment.getIntance()
+
         )
 
         override fun getItem(position: Int): Fragment {
@@ -35,7 +37,8 @@ class MainActivity : AppCompatActivity() {
         override fun getPageTitle(position: Int): CharSequence? {
             return when (position) {
                 0 -> "makanan"
-                else -> "minuman"
+                1 -> "minuman"
+                else ->"tambah data"
             }
         }
     }
