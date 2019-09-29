@@ -18,7 +18,7 @@ class MinumanFragment : Fragment() {
     }
 
     val dataMinuman = mutableListOf<MenuModel>()
-    val rvAdapter = RvAdapter(dataMinuman)
+    val rvAdapter = RvAdapterMakanan(dataMinuman)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,17 +35,10 @@ class MinumanFragment : Fragment() {
             rv_makanan.adapter = rvAdapter
             rv_makanan.layoutManager = LinearLayoutManager(context)
 
-            addDummyData()
+
         }
 
-        private fun addDummyData() {
-            dataMinuman.add(
-                MenuModel("s jagong", "1B", R.drawable.esjagong)
-            )
-            dataMinuman.add(
-                MenuModel("s botol", "10B", R.drawable.esbotol)
-            )
-            rvAdapter.notifyDataSetChanged()
-        }
+
+
 
 }

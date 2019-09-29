@@ -9,8 +9,8 @@ import com.example.daftarmenu.R
 import com.example.daftarmenu.data.MenuModel
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.menu_item.*
-class RvAdapter(private val data: List<MenuModel>) :
-    RecyclerView.Adapter<RvAdapter.MenuViewHolder>() {
+class RvAdapterMakanan(private val data: List<MenuModel>) :
+    RecyclerView.Adapter<RvAdapterMakanan.MenuViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         return MenuViewHolder(
             LayoutInflater.from(parent.context)
@@ -30,7 +30,7 @@ class RvAdapter(private val data: List<MenuModel>) :
         fun bindData(item: MenuModel) {
             tv_mie.text = item.namaMenu
             tv_harga.text = item.hargaMenu
-            image.setImageResource(item.gambarMenu)
+//            image.setImageResource(item.gambarMenu)
 
             itemView.setOnClickListener{
                 Toast.makeText(containerView.context,item.namaMenu,Toast.LENGTH_SHORT).show()
